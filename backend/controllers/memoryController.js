@@ -31,7 +31,7 @@ exports.saveGameData = async (req, res) => {
 
 exports.getGameHistory = async (req, res) => {
     try {
-        const gameHistory = await Save.find().sort({ gameDate: -1 }); // Sort by latest game
+        const gameHistory = await Save.find().populate('userID', 'username').sort({ gameDate: -1 }); // Sort by latest game
         res.status(200).json(gameHistory);
     } catch (error) {
         console.error('Error fetching game history:', error);
