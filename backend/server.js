@@ -33,8 +33,9 @@ app.use('/api/memory', memoryRoutes);
 connectDB();
 
 // Default Route
-app.get('/', (req, res) => {
-  res.send('Backend server is running');
+app.use((req, res) => {
+  res.status(404)
+  .send('Route not found');//Added basic error handling for undefined routes
 });
 
 // Start Server
