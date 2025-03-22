@@ -1,4 +1,3 @@
-```md
 # Backend Test - Additional Documentation
 
 ## Implemented Features & Changes
